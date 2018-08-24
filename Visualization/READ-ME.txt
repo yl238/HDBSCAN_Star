@@ -1,0 +1,41 @@
+HDBSCAN* Visualization module.
+Compiled using JRE 8.
+The source is provided as a NetBeans project.
+
+Implemented by: Fernando S. de Aguiar Neto (fsan110792@gmail.com)
+Acknowledgements: 	Jadson Castro.
+								Antonio Lima Batista.
+								Arthur Fortes Costa.
+------------------------------------------------
+
+Original paper:
+CAMPELLO, R. J. G. B.; MOULAVI, D.; SANDER, J.; ZIMEK, A.; Hierarchical Density Estimates for Data Clustering, Visualization, and Outlier Detection. ACM Trans. Knowl. Discov. Data.
+
+------------------------------------------------
+Program help:
+
+This software can be used in order to generate two types of plots: Silhouette-like [1] and Reachability [2,3] plots from the HDBSCAN* output.
+
+Usage: execute the Plotter.jar file to open the GUI, you may pass a directory as parameter, this directory will be the default directory when loading a file.
+Example of usage: double click .jar file.
+Example of usage: "java -jar Plotter.jar "C:\MyWorkspace\Databases\" "
+Example of usage: "java -jar Plotter.jar"
+
+The GUI asks for an input file to be loaded, this file must be a .vis file provided by the HDBSCAN* main module, please do not rename any of the HDBSCAN* generated files prior to the use of this tool.
+Also notice that this tool can only provide plots for non-compact hierarchies, so please when running the HDBSCAN* main module do not set compact=true (i.e., the default value compact=false must be used).
+
+Once you select the file you may choose between normal load and shaved [1] load.
+	-Normal Load: Loads the entire hierarchy file. Requires more RAM. The software will show a message if the matrix could not be fit into memory.
+	-Shaved Load: Loads just some levels of the hierarchy matrix. Useful when the entire matrix can not be fit into memory. This option disables the reachability-plot.
+						  This load requires a parameter rShave, for more information consult Auto-HDS [1].
+								
+After that, choose the desired plot and a new window will show.
+
+Help icons are provided into the GUI.
+
+-------------------------------------------------------------------
+REFERENCES
+
+[1]GUPTA G.; LIU, A.; GHOSH, J.; Automated Hierarchical Density Shaving: A Robust Automated Clustering and Visualization Framework for Large Biological Data Sets. IEEE/ACM Transactions on Computational Biology and Bioinformatics. 2010. DOI: http://dx.doi.org/10.1109/TCBB.2008.32
+[2]ANKERST, M.; BREUNIG, M. M.; KRIEGEL, H. P.; SANDER, J.; OPTICS: Ordering Points To Identify the Clustering Structure. ACM International Conference on Management of Data (SIGMOD), Philadelphia. p. 49–60. 1999. DOI: http://dx.doi.org/10.1145/304182.304187
+[3]SANDER, J.; Qin, X.; LU, Z.; NIU, N.; KOVARSKY, A.; Automatic Extraction of Clusters from Hierarchical Clustering Representations. 7th Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD), Seoul, Korea. DOI: http://dx.doi.org/10.1007/3-540-36175-8_8
